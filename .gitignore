@@ -1,2 +1,3 @@
 # Ignore datasets
+.DS_Store
 *.dta
