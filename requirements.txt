@@ -1,0 +1,4 @@
+pandas
+bumpy
+matplotlib
+tikzplotlib
