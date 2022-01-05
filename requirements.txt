@@ -1,4 +1,4 @@
 pandas
-bumpy
+numpy
 matplotlib
 tikzplotlib
