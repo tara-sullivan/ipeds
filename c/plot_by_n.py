@@ -1,4 +1,5 @@
-# Male dominated fields in IPEDS
+# %%
+
 import pandas as pd
 import matplotlib.pyplot as plt
 
@@ -7,17 +8,19 @@ from c.clean_data.make_df import ReadData
 
 ipeds_df = ReadData()
 df = ipeds_df.df
+# %%
+import sys
 
 # path to img_tools
 img_tools_path = '/Users/tarasullivan/Documents/dissertation'
-img_tools_path = '/Users/tarasullivan/Documents/dissertation'
-if img_tools_path  not in sys.path:
+
+if img_tools_path not in sys.path:
     sys.path.append(img_tools_path)
 from img_tools import plot_line_labels
 
 plot_df = plot_line_labels.plot_df
 
-# imgpath = rootdir + '/img/'
+# %%
 
 def plot_n_degrees(plot_title=False, ax=None, x_lim=None):
     # Modern data
