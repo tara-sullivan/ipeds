@@ -2,3 +2,5 @@ pandas
 numpy
 matplotlib
 tikzplotlib
+seaborn
+tol-colors

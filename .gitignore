@@ -1,3 +1,5 @@
 # Ignore datasets
 .DS_Store
 *.dta
+.idea/
+*__pycache__*

@@ -1,6 +1,19 @@
 import pandas as pd
 
-datapath = './table28/'
+import os
+import sys
+import inspect
+
+try:
+    currpath = os.path.abspath(__file__)
+except NameError:
+    currpath = os.path.abspath(inspect.getfile(inspect.currentframe()))
+rootdir = (os.path.dirname(os.path.dirname(os.path.dirname(os.path.dirname(currpath)))))
+# sys.path.append(rootdir)
+
+datapath = os.path.join(rootdir, 'c', 'clean_data', 'historical_data', 'table28')
+
+# datapath = './table28/'
 
 
 def convert(df, old_col, new_col):
@@ -13,7 +26,7 @@ def convert(df, old_col, new_col):
 def make_df():
     list_data = []
     for table_pg in ['a', 'b', 'c']:
-        table_name = datapath + 'table28' + table_pg + '-page-1-table-1.csv'
+        table_name = datapath + '/table28' + table_pg + '-page-1-table-1.csv'
         # Read in data
         raw_data = pd.read_csv(table_name)
 
