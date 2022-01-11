@@ -31,6 +31,8 @@ if __name__ == '__main__':
         PlotCIP = plot_by_cip.PlotCIP
 
         ipeds_dict = MakeDict()
+        cip2labels_short = ipeds_dict.cip2labels_short
+        cip2labels = cip2labels_short
         cip4labels_df = ipeds_dict.cip4labels_df
 
 # %%
@@ -266,6 +268,20 @@ cip_cls = PlotCIP(cip_list=cip_list, cip_dict=cip_dict,
 save_comboplot(cip_cls, 'cip14')
 
 # %%
+# For paper
+plt.close('all')
+cip_cls = PlotCIP(cip_list=cip_list, cip_dict=cip_dict,
+                  rategraph=True, areagraph=False,
+                  label_edit=label_edit,
+                  x_lim=2031, shareyflag=False)
+save_rateplot('cip14_rat',
+              extra_tikzpicture_parameters={
+                  'every node/.style={font=\\footnotesize}',
+                  'align=left'
+              }
+              )
+
+# %%
 ##############################################################################
 # Business and related services
 
@@ -321,6 +337,38 @@ cip_cls = PlotCIP(cip_list=cip_list,
 save_comboplot(cip_cls, 'cip11')
 
 # %%
+# CS - for paper
+plt.close('all')
+cip_list = list(cip4labels_df.loc['11'].index)
+
+cip_dict = {'General': ['11.01'],
+            'Information science': ['11.04'],
+            'Media applications': ['11.08'],
+            'Systems network': ['11.09'],
+            'IT': ['11.10'],
+            'Other': ['11.02', '11.05', '11.99', '11.03', '11.06']}
+
+label_edit = {'11.01': .06, '11.04': .08,
+              '11.09': -.14, '11.10': -.1,
+              '11.99': -.05,
+              }
+
+
+# Create standalone version of graph
+cip_cls = PlotCIP(
+    cip_list=cip_list,
+    cip_dict=cip_dict,
+    label_edit=label_edit,
+    rategraph=True, x_lim=2035)
+# pdb.set_trace()
+save_rateplot('cip11_rat',
+               extra_tikzpicture_parameters = {
+                   'every node/.style={font=\\footnotesize}',
+                   'align=left'
+               }
+)
+
+  # %%
 ##############################################################################
 # Education
 
@@ -360,13 +408,22 @@ cip_dict = {'Biology': ['26'], 'Math': ['27'],
 
 label_edit = {'40.99': -.1, '27': .1}
 
+# Slide version
 cip_cls = PlotCIP(cip_list=cip_list,
                   cip_dict=cip_dict, label_edit=label_edit,
                   rategraph=True, areagraph=True,
                   x_lim=2031, shareyflag=False,
                   )
-
 save_comboplot(cip_cls, 'science_math')
+
+# Paper version
+cip_cls = PlotCIP(cip_list=cip_list,
+                  cip_dict=cip_dict, label_edit=label_edit,
+                  rategraph=True, areagraph=True,
+                  rate_title='Biological and physical sciences and Math',
+                  x_lim=2031, shareyflag=False,
+                  )
+save_comboplot(cip_cls, 'science_math_paper')
 
 # %%
 ##############################################################################
@@ -380,13 +437,33 @@ cip_dict = {'Biology': ['26'], 'Math': ['27'],
 
 label_edit = {'40.99': -.1, '27': .05, '40.06': -.03}
 
+# Slide version
 cip_cls = PlotCIP(cip_list=cip_list,
                   cip_dict=cip_dict, label_edit=label_edit,
                   rategraph=True, areagraph=True,
                   x_lim=2031, shareyflag=False,
                   )
-
 save_comboplot(cip_cls, 'physical_science_math')
+
+# Paper version
+cip_cls = PlotCIP(cip_list=cip_list,
+                  cip_dict=cip_dict, label_edit=label_edit,
+                  rategraph=True, areagraph=True,
+                  rate_title='Physical Sciences and Math',
+                  x_lim=2031, shareyflag=False,
+                  )
+save_comboplot(cip_cls, 'physical_science_math_paper')
+
+# subplot_titles += tplf.subplot_title(
+#     ax_loc=ax_loc, ref_name=ref_name, col=False,
+#     subtitle_id=subtitle_id, plt_title=plt_title
+# )
+
+
+# extra_tikzpicture_parameters = {
+#     'every node/.style={font=\\footnotesize}',
+#     'align=left'
+# })
 
 
 ##############################################################################

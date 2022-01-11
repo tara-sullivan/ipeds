@@ -72,12 +72,15 @@ def add_end_content(filepath, plot_title=None, group_title=None,
 
 
 def save_rateplot(filename, source=None, plot_title=None,
-                  width=size.w(1.25), height=size.h(1.25)):
+                  width=size.w(1.25), height=size.h(1.25),
+                  extra_tikzpicture_parameters=None):
     tpl.clean_figure()
     filepath = imgpath + filename + '.tex'
     tpl.save(filepath, wrap=False, axis_height=height,
-             axis_width=width)
-    add_begin_content(filepath)
+             axis_width=width,
+             )
+    add_begin_content(filepath,
+                      extra_tikzpicture_parameters=extra_tikzpicture_parameters)
     add_end_content(filepath, source=source, plot_title=plot_title)
 
 
@@ -99,7 +102,49 @@ def save_areaplot(filename, title):
     add_end_content(filepath, title_str)
 
 
-def save_comboplot(cip_cls, filename):
+def save_comboplot(cip_cls, filename, slide=True):
+    filepath = imgpath + filename + '.tex'
+    file_handle = codecs.open(filepath, 'w')
+
+    # Rate graph
+    cip_cls.plot_rate()
+    # To do: figure out why computer science ('11') raises error here
+    try:
+        tpl.clean_figure()
+    except ValueError:
+        pass
+    code = tpl.get_tikz_code(axis_height='140pt',
+                             axis_width='300pt',
+                             # axis_width='150pt',
+                             # extra_axis_parameters={'x post scale=2',
+                             #                        'y post scale=1'}
+                             )
+    file_handle.write(code)
+    file_handle.write('\n\\vspace{0.1cm}\n\\begin{tikzpicture}')
+    file_handle.close()
+
+    # area graph
+    cip_cls.plot_area()
+    tpl.clean_figure()
+    code = tpl.get_tikz_code(
+        wrap=False,
+        extra_axis_parameters={"height=90pt, width=160pt",
+                               "reverse legend",
+                               "legend style={"
+                               + "at={(2.02, 0.5)},"
+                               + "anchor=west,"
+                               + "}"},
+        extra_groupstyle_parameters={"horizontal sep=0.8cm",
+                                     "group name=my plots"},
+    )
+    with open(filepath, 'a+') as file_handle:
+        content = file_handle.read()
+        file_handle.seek(0, 0)
+        file_handle.write('\n' + code + '\n' + content)
+    group_title = 'Number Bachelor\'s degrees awarded (thousands)'
+    add_end_content(filepath, group_title, title_space="0.25cm")
+
+def save_comboplot(cip_cls, filename, slide=True):
     filepath = imgpath + filename + '.tex'
     file_handle = codecs.open(filepath, 'w')
 
