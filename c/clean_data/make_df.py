@@ -11,18 +11,20 @@ import os
 import sys
 import inspect
 
-try:
-    currpath = os.path.abspath(__file__)
-except NameError:
-    currpath = os.path.abspath(inspect.getfile(inspect.currentframe()))
-rootdir = (os.path.dirname(os.path.dirname(os.path.dirname(currpath))))
-# sys.path.append(rootdir)
+# try:
+#     currpath = os.path.abspath(__file__)
+# except NameError:
+#     currpath = os.path.abspath(inspect.getfile(inspect.currentframe()))
+# rootdir = (os.path.dirname(os.path.dirname(os.path.dirname(currpath))))
+# # sys.path.append(rootdir)
 
-datapath = os.path.join(rootdir, 'c', 'clean_data')
-cippath = os.path.join(rootdir, 'c', 'clean_data')
+# datapath = os.path.join(rootdir, 'c', 'clean_data')
+# cippath = os.path.join(rootdir, 'c', 'clean_data')
 
-# datapath = rootdir + '/ipeds/c/clean_data/'
-# cippath = rootdir + '/ipeds/c/clean_data/'
+# print(datapath)
+
+datapath = '/Users/tarasullivan/Documents/dissertation/data/ipeds/c/clean_data'
+cippath = '/Users/tarasullivan/Documents/dissertation/data/ipeds/c/clean_data'
 
 
 class ReadData:
@@ -183,4 +185,4 @@ if __name__ == '__main__':
     ipeds_dict = MakeDict()
     cip2labels = ipeds_dict.cip2labels
     cip2labels_short = ipeds_dict.cip2labels_short
-    # cip4labels_df = ipeds_dict.cip4labels_df
+    cip4labels_df = ipeds_dict.cip4labels_df
