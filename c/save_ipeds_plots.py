@@ -5,14 +5,11 @@ import tikzplotlib as tpl
 import codecs
 
 # %%
-# Manual path fixes
-import sys
-# dissertation path
-proj_path = '/Users/tarasullivan/Documents/dissertation'
-if proj_path not in sys.path:
-    sys.path.append(proj_path)
+# Set image path
+import os
 
-imgpath = proj_path + '/img/'
+dirname = os.path.dirname(__file__)
+tex_img_path = os.path.join(dirname, 'fig_tex_code')
 # %%
 # Add items from img_tools
 from img_tools.figsize import ArticleSize
@@ -75,7 +72,7 @@ def save_rateplot(filename, source=None, plot_title=None,
                   width=size.w(1.25), height=size.h(1.25),
                   extra_tikzpicture_parameters=None):
     tpl.clean_figure()
-    filepath = imgpath + filename + '.tex'
+    filepath = os.path.join(tex_img_path, filename + '.tex')
     tpl.save(filepath, wrap=False, axis_height=height,
              axis_width=width,
              )
@@ -86,7 +83,7 @@ def save_rateplot(filename, source=None, plot_title=None,
 
 def save_areaplot(filename, title):
     tpl.clean_figure()
-    filepath = imgpath + filename + '.tex'
+    filepath = os.path.join(tex_img_path, filename + '.tex')
     tpl.save(filepath, wrap=False,
              extra_axis_parameters={"height=180pt, width=150pt",
                                     "reverse legend",
@@ -103,7 +100,7 @@ def save_areaplot(filename, title):
 
 
 def save_comboplot(cip_cls, filename, slide=True):
-    filepath = imgpath + filename + '.tex'
+    filepath = os.path.join(tex_img_path, filename + '.tex')
     file_handle = codecs.open(filepath, 'w')
 
     # Rate graph
@@ -145,7 +142,7 @@ def save_comboplot(cip_cls, filename, slide=True):
     add_end_content(filepath, group_title, title_space="0.25cm")
 
 def save_comboplot(cip_cls, filename, slide=True):
-    filepath = imgpath + filename + '.tex'
+    filepath = os.path.join(tex_img_path, filename + '.tex')
     file_handle = codecs.open(filepath, 'w')
 
     # Rate graph

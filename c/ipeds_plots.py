@@ -4,15 +4,11 @@ import matplotlib.pyplot as plt
 # from importlib import reload
 
 # %%
-# Manual path fixes
-import sys
+# Set image path
+import os
 
-# dissertation path
-proj_path = '/Users/tarasullivan/Documents/dissertation'
-if proj_path not in sys.path:
-    sys.path.append(proj_path)
-
-imgpath = proj_path + '/img/'
+dirname = os.path.dirname(__file__)
+tex_img_path = os.path.join(dirname, 'fig_tex_code')
 
 # %%
 # Add items from ipeds folder
@@ -201,7 +197,8 @@ subplot_titles += tplf.subplot_title(
     subtitle_id=subtitle_id, plt_title=plt_title
 )
 
-tplf.save_subplots(imgpath + 'intro_ipeds.tex', figure=fig,
+tplf.save_subplots(os.path.join(tex_img_path, 'intro_ipeds.tex'),
+                   figure=fig,
                    node_code=subplot_titles, caption=group_caption,
                    height=size.h(1.25), width=size.w(1.1),
                    extra_tikzpicture_parameters={

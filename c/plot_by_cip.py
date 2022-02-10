@@ -9,14 +9,6 @@ get_tikz_code = tpl._save.get_tikz_code
 save = tpl._save.save
 
 # %%
-# Manual path fixes
-import sys
-# dissertation path
-proj_path = '/Users/tarasullivan/Documents/dissertation'
-if proj_path not in sys.path:
-    sys.path.append(proj_path)
-
-# %%
 # Add items from img_tools
 # from img_tools.tikzplotlib_functions import save_rateplot
 from img_tools.figsize import ArticleSize

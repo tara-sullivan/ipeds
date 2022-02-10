@@ -11,16 +11,6 @@ import os
 import sys
 import inspect
 
-# try:
-#     currpath = os.path.abspath(__file__)
-# except NameError:
-#     currpath = os.path.abspath(inspect.getfile(inspect.currentframe()))
-# rootdir = (os.path.dirname(os.path.dirname(os.path.dirname(currpath))))
-# # sys.path.append(rootdir)
-
-# datapath = os.path.join(rootdir, 'c', 'clean_data')
-# cippath = os.path.join(rootdir, 'c', 'clean_data')
-
 # print(datapath)
 
 datapath = '/Users/tarasullivan/Documents/dissertation/data/ipeds/c/clean_data'

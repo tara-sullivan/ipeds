@@ -4,15 +4,6 @@ import pandas as pd
 import matplotlib.pyplot as plt
 
 # %%
-# Manual path fixes
-import sys
-
-# dissertation path
-proj_path = '/Users/tarasullivan/Documents/dissertation'
-if proj_path not in sys.path:
-    sys.path.append(proj_path)
-
-# %%
 # Add items from ipeds folder
 from data.ipeds.c.clean_data.historical_data.historical_df import make_df
 from data.ipeds.c.clean_data.make_df import ReadData
