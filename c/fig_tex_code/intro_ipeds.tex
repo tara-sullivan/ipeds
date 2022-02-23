@@ -1,5 +1,5 @@
-\begin{tikzpicture}[align=left,
-every node/.style={font=\footnotesize}]
+\begin{tikzpicture}[every node/.style={font=\footnotesize},
+align=left]
 % This file was created with tikzplotlib v0.9.17.
 \definecolor{color0}{rgb}{0.266666666666667,0.466666666666667,0.666666666666667}
 \definecolor{color1}{rgb}{0.933333333333333,0.4,0.466666666666667}
@@ -8,14 +8,14 @@ every node/.style={font=\footnotesize}]
 \definecolor{color4}{rgb}{0.4,0.8,0.933333333333333}
 \definecolor{color5}{rgb}{0.666666666666667,0.2,0.466666666666667}
 
-\begin{groupplot}[group style={group size=2 by 1, vertical sep=2cm, horizontal sep=1.2cm, group name=my plots}]
+\begin{groupplot}[group style={group size=2 by 1, group name=my plots, horizontal sep=1.2cm, vertical sep=2cm}]
 \nextgroupplot[
 height=6.376357092455836cm,
 tick align=outside,
 tick pos=left,
 width=9.079103cm,
 x grid style={white!69.0196078431373!black},
-xmin=1988.6, xmax=2030,
+xmin=1988.5, xmax=2030,
 xtick style={color=black},
 xtick={1990,1995,2000,2005,2010,2015},
 xticklabels={
@@ -29,18 +29,16 @@ xticklabels={
 ymajorgrids,
 ymin=0, ymax=2,
 ytick style={color=black},
-ytick={0,0.2,0.4,0.6,0.8,1,1.2,1.4,1.6,1.8,2},
+ytick={0,0.25,0.5,0.75,1,1.25,1.5,1.75,2},
 yticklabels={
   \(\displaystyle 0\),
-  \(\displaystyle 0.2\),
-  \(\displaystyle 0.4\),
-  \(\displaystyle 0.6\),
-  \(\displaystyle 0.8\),
+  \(\displaystyle 0.25\),
+  \(\displaystyle 0.5\),
+  \(\displaystyle 0.75\),
   \(\displaystyle 1\),
-  \(\displaystyle 1.2\),
-  \(\displaystyle 1.4\),
-  \(\displaystyle 1.6\),
-  \(\displaystyle 1.8\),
+  \(\displaystyle 1.25\),
+  \(\displaystyle 1.5\),
+  \(\displaystyle 1.75\),
   \(\displaystyle 2\)
 }
 ]
@@ -75,6 +73,8 @@ table {%
 2016 0.891088211872529
 2017 0.886778443447229
 2018 0.885989010989011
+2019 0.875450922535781
+2020 0.868643244683975
 };
 \addplot [semithick, color1]
 table {%
@@ -107,6 +107,8 @@ table {%
 2016 1.73332348887576
 2017 1.76386178739756
 2018 1.79705042050622
+2019 1.83993397658614
+2020 1.88966898652032
 };
 \addplot [semithick, color2]
 table {%
@@ -139,6 +141,8 @@ table {%
 2016 0.265729553903346
 2017 0.274784377806876
 2018 0.286244813278008
+2019 0.294879790765517
+2020 0.313628998983586
 };
 \addplot [semithick, color3]
 table {%
@@ -171,6 +175,8 @@ table {%
 2016 1.49894803282138
 2017 1.56678100208329
 2018 1.64683752645192
+2019 1.72139153632667
+2020 1.8181585568681
 };
 \addplot [semithick, color4]
 table {%
@@ -203,6 +209,8 @@ table {%
 2016 0.235600462105514
 2017 0.242461538461538
 2018 0.257417838961352
+2019 0.266755133589614
+2020 0.279170812185938
 };
 \addplot [semithick, color5]
 table {%
@@ -235,6 +243,8 @@ table {%
 2016 0.6299488011355
 2017 0.653665131183657
 2018 0.67027762382224
+2019 0.687768295836566
+2020 0.754622121310412
 };
 \addplot [semithick, white!73.3333333333333!black]
 table {%
@@ -267,6 +277,8 @@ table {%
 2016 0.709809177356564
 2017 0.696071964017991
 2018 0.709341764874964
+2019 0.709753944609953
+2020 0.702133305030779
 };
 \addplot [semithick, black]
 table {%
@@ -299,43 +311,45 @@ table {%
 2016 1.34265313826302
 2017 1.34451026998746
 2018 1.35044521494211
+2019 1.35227525265305
+2020 1.37325479523552
 };
-\draw (axis cs:2018.5,0.835989010989011) node[
+\draw (axis cs:2020.5,0.818643244683975) node[
   anchor=base west,
   text=color0,
   rotate=0.0
 ]{Business};
-\draw (axis cs:2018.5,1.74705042050622) node[
+\draw (axis cs:2020.5,1.83966898652032) node[
   anchor=base west,
   text=color1,
   rotate=0.0
 ]{Social \\ Sciences};
-\draw (axis cs:2018.5,0.286244813278008) node[
+\draw (axis cs:2020.5,0.313628998983586) node[
   anchor=base west,
   text=color2,
   rotate=0.0
 ]{Engineering};
-\draw (axis cs:2018.5,1.44683752645192) node[
+\draw (axis cs:2020.5,1.6181585568681) node[
   anchor=base west,
   text=color3,
   rotate=0.0
 ]{Biological \\ Sciences};
-\draw (axis cs:2018.5,0.037417838961352) node[
+\draw (axis cs:2020.5,0.0591708121859375) node[
   anchor=base west,
   text=color4,
   rotate=0.0
 ]{Computer \\ Services};
-\draw (axis cs:2018.5,0.44027762382224) node[
+\draw (axis cs:2020.5,0.524622121310412) node[
   anchor=base west,
   text=color5,
   rotate=0.0
 ]{Physical \\ Sciences};
-\draw (axis cs:2018.5,0.709341764874964) node[
+\draw (axis cs:2020.5,0.702133305030779) node[
   anchor=base west,
   text=white!73.3333333333333!black,
   rotate=0.0
 ]{Math};
-\draw (axis cs:2018.5,1.30044521494211) node[
+\draw (axis cs:2020.5,1.32325479523552) node[
   anchor=base west,
   text=black,
   rotate=0.0
@@ -347,7 +361,7 @@ tick align=outside,
 tick pos=left,
 width=9.079103cm,
 x grid style={white!69.0196078431373!black},
-xmin=1988.6, xmax=2030,
+xmin=1988.5, xmax=2030,
 xtick style={color=black},
 xtick={1990,1995,2000,2005,2010,2015},
 xticklabels={
@@ -359,9 +373,9 @@ xticklabels={
   \(\displaystyle 2015\)
 },
 ymajorgrids,
-ymin=0, ymax=4,
+ymin=0, ymax=4.5,
 ytick style={color=black},
-ytick={0,0.5,1,1.5,2,2.5,3,3.5,4},
+ytick={0,0.5,1,1.5,2,2.5,3,3.5,4,4.5},
 yticklabels={
   \(\displaystyle 0\),
   \(\displaystyle 0.5\),
@@ -371,7 +385,8 @@ yticklabels={
   \(\displaystyle 2.5\),
   \(\displaystyle 3\),
   \(\displaystyle 3.5\),
-  \(\displaystyle 4\)
+  \(\displaystyle 4\),
+  \(\displaystyle 4.5\)
 }
 ]
 \addplot [semithick, color0]
@@ -405,6 +420,8 @@ table {%
 2016 3.45335800975193
 2017 3.5649336364303
 2018 3.73112597886414
+2019 3.77985966535585
+2020 3.83483939555016
 };
 \addplot [semithick, color1]
 table {%
@@ -437,6 +454,8 @@ table {%
 2016 0.484934159566228
 2017 0.485498972368121
 2018 0.491626926915826
+2019 0.504492413227454
+2020 0.508323917137476
 };
 \addplot [semithick, color2]
 table {%
@@ -469,6 +488,8 @@ table {%
 2016 0.86224711505963
 2017 0.911927057663874
 2018 0.932909364532259
+2019 0.97613195954249
+2020 1.01406619934079
 };
 \addplot [semithick, color3]
 table {%
@@ -501,6 +522,8 @@ table {%
 2016 2.39009858086881
 2017 2.41193498107326
 2018 2.55055658627087
+2019 2.79358437935844
+2020 2.87886360647113
 };
 \addplot [semithick, color4]
 table {%
@@ -533,6 +556,8 @@ table {%
 2016 1.62103268593084
 2017 1.69435848607474
 2018 1.72367399741268
+2019 1.84039699570815
+2020 1.93880510440835
 };
 \addplot [semithick, color5]
 table {%
@@ -565,6 +590,8 @@ table {%
 2016 1.52219451371571
 2017 1.5668154371226
 2018 1.53559232991857
+2019 1.58189429618001
+2020 1.61822660098522
 };
 \addplot [semithick, white!73.3333333333333!black]
 table {%
@@ -597,38 +624,40 @@ table {%
 2016 2.7346483066617
 2017 2.68607897885919
 2018 2.76014463640016
+2019 2.74482187241094
+2020 2.90408077408498
 };
-\draw (axis cs:2018.5,3.73112597886414) node[
+\draw (axis cs:2020.5,3.83483939555016) node[
   anchor=base west,
   text=color0,
   rotate=0.0
 ]{Psychology};
-\draw (axis cs:2018.5,0.491626926915826) node[
+\draw (axis cs:2020.5,0.508323917137476) node[
   anchor=base west,
   text=color1,
   rotate=0.0
 ]{Economics};
-\draw (axis cs:2018.5,0.932909364532259) node[
+\draw (axis cs:2020.5,1.01406619934079) node[
   anchor=base west,
   text=color2,
   rotate=0.0
 ]{Political science};
-\draw (axis cs:2018.5,2.55055658627087) node[
+\draw (axis cs:2020.5,2.87886360647113) node[
   anchor=base west,
   text=color3,
   rotate=0.0
 ]{Sociology};
-\draw (axis cs:2018.5,1.72367399741268) node[
+\draw (axis cs:2020.5,1.93880510440835) node[
   anchor=base west,
   text=color4,
   rotate=0.0
 ]{Other};
-\draw (axis cs:2018.5,1.53559232991857) node[
+\draw (axis cs:2020.5,1.61822660098522) node[
   anchor=base west,
   text=color5,
   rotate=0.0
 ]{Int'l relations};
-\draw (axis cs:2018.5,2.76014463640016) node[
+\draw (axis cs:2020.5,2.90408077408498) node[
   anchor=base west,
   text=white!73.3333333333333!black,
   rotate=0.0

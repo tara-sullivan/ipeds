@@ -9,16 +9,17 @@ tick align=outside,
 tick pos=left,
 width=10.317162499999998cm,
 x grid style={white!69.0196078431373!black},
-xmin=1957.1, xmax=2032.5,
+xmin=1957, xmax=2035,
 xtick style={color=black},
-xtick={1960,1970,1980,1990,2000,2010},
+xtick={1960,1970,1980,1990,2000,2010,2020},
 xticklabels={
   \(\displaystyle 1960\),
   \(\displaystyle 1970\),
   \(\displaystyle 1980\),
   \(\displaystyle 1990\),
   \(\displaystyle 2000\),
-  \(\displaystyle 2010\)
+  \(\displaystyle 2010\),
+  \(\displaystyle 2020\)
 },
 ylabel={Number degrees (millions)},
 ymajorgrids,
@@ -94,6 +95,8 @@ table {%
 2016 0.871549010276794
 2017 0.886856079101562
 2018 0.897544026374817
+2019 0.90895402431488
+2020 0.911998987197876
 };
 \addplot [semithick, color1]
 table {%
@@ -149,13 +152,15 @@ table {%
 2016 1.17018795013428
 2017 1.19238698482513
 2018 1.2120840549469
+2019 1.22915601730347
+2020 1.25240695476532
 };
-\draw (axis cs:2018.5,0.897544) node[
+\draw (axis cs:2020.5,0.911999) node[
   anchor=base west,
   text=color0,
   rotate=0.0
 ]{Men};
-\draw (axis cs:2018.5,1.212084) node[
+\draw (axis cs:2020.5,1.252407) node[
   anchor=base west,
   text=color1,
   rotate=0.0

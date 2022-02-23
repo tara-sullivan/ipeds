@@ -43,13 +43,13 @@ def plot_n_degrees(plot_title=False, ax=None, x_lim=None):
 
     plot_df(df=totdf.loc[1960:], col_labels=col_labels, ax=ax,
             title=title_str, y_title=y_title, x_lim=x_lim,
-            xticks=[1960, 1970, 1980, 1990, 2000, 2010])
+            xticks=[1960, 1970, 1980, 1990, 2000, 2010, 2020])
 
 
 if __name__ == '__main__':
 
     fig, ax = plt.subplots()
-    plot_n_degrees(ax=ax, x_lim=2018)
+    plot_n_degrees(ax=ax, x_lim=2020)
 
     # Edit the standalone version
     # Remove the in text labels

@@ -14,21 +14,22 @@ tick pos=left,
 title={Ratio of women to men},
 width=10.317162499999998cm,
 x grid style={white!69.0196078431373!black},
-xmin=1988.6, xmax=2030,
+xmin=1988.5, xmax=2030,
 xtick style={color=black},
-xtick={1990,1995,2000,2005,2010,2015},
+xtick={1990,1995,2000,2005,2010,2015,2020},
 xticklabels={
   \(\displaystyle 1990\),
   \(\displaystyle 1995\),
   \(\displaystyle 2000\),
   \(\displaystyle 2005\),
   \(\displaystyle 2010\),
-  \(\displaystyle 2015\)
+  \(\displaystyle 2015\),
+  \(\displaystyle 2020\)
 },
 ymajorgrids,
-ymin=0, ymax=4,
+ymin=0, ymax=4.5,
 ytick style={color=black},
-ytick={0,0.5,1,1.5,2,2.5,3,3.5,4},
+ytick={0,0.5,1,1.5,2,2.5,3,3.5,4,4.5},
 yticklabels={
   \(\displaystyle 0\),
   \(\displaystyle 0.5\),
@@ -38,7 +39,8 @@ yticklabels={
   \(\displaystyle 2.5\),
   \(\displaystyle 3\),
   \(\displaystyle 3.5\),
-  \(\displaystyle 4\)
+  \(\displaystyle 4\),
+  \(\displaystyle 4.5\)
 }
 ]
 \addplot [semithick, color0]
@@ -72,6 +74,8 @@ table {%
 2016 3.45335793495178
 2017 3.56493353843689
 2018 3.73112607002258
+2019 3.77985978126526
+2020 3.83483934402466
 };
 \addplot [semithick, color1]
 table {%
@@ -101,6 +105,8 @@ table {%
 2016 0.484934091567993
 2017 0.485498905181885
 2018 0.491626977920532
+2019 0.504492402076721
+2020 0.508323907852173
 };
 \addplot [semithick, color2]
 table {%
@@ -133,6 +139,8 @@ table {%
 2016 0.862247109413147
 2017 0.911926984786987
 2018 0.932909369468689
+2019 0.976131916046143
+2020 1.01406621932983
 };
 \addplot [semithick, color3]
 table {%
@@ -164,6 +172,8 @@ table {%
 2016 2.39009857177734
 2017 2.41193509101868
 2018 2.55055665969849
+2019 2.79358434677124
+2020 2.87886357307434
 };
 \addplot [semithick, color4]
 table {%
@@ -196,6 +206,8 @@ table {%
 2016 1.52219450473785
 2017 1.56681549549103
 2018 1.53559231758118
+2019 1.58189427852631
+2020 1.61822664737701
 };
 \addplot [semithick, color5]
 table {%
@@ -228,33 +240,35 @@ table {%
 2016 2.73464822769165
 2017 2.68607902526855
 2018 2.76014471054077
+2019 2.74482178688049
+2020 2.90408086776733
 };
-\draw (axis cs:2018.5,3.73112597886414) node[
+\draw (axis cs:2020.5,3.83483939555016) node[
   anchor=base west,
   text=color0,
   rotate=0.0
 ]{Psychology};
-\draw (axis cs:2018.5,0.491626926915826) node[
+\draw (axis cs:2020.5,0.508323917137476) node[
   anchor=base west,
   text=color1,
   rotate=0.0
 ]{Economics};
-\draw (axis cs:2018.5,0.932909364532259) node[
+\draw (axis cs:2020.5,1.01406619934079) node[
   anchor=base west,
   text=color2,
   rotate=0.0
 ]{Political science};
-\draw (axis cs:2018.5,2.55055658627087) node[
+\draw (axis cs:2020.5,2.87886360647113) node[
   anchor=base west,
   text=color3,
   rotate=0.0
 ]{Sociology};
-\draw (axis cs:2018.5,1.53559232991857) node[
+\draw (axis cs:2020.5,1.61822660098522) node[
   anchor=base west,
   text=color4,
   rotate=0.0
 ]{Int'l relations};
-\draw (axis cs:2018.5,2.76014463640016) node[
+\draw (axis cs:2020.5,2.90408077408498) node[
   anchor=base west,
   text=color5,
   rotate=0.0

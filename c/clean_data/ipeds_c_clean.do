@@ -27,7 +27,7 @@ local readdata 1
 * note: might want to remove cipnames local;
 
 if "`c(os)'" == "MacOSX" | "`c(os)'" == "Unix" {
-	cd "/Users/tarasullivan/Documents/dissertation/ipeds/"
+	cd "/Users/tarasullivan/Documents/dissertation/data/ipeds/"
 // 	local datapath "/Volumes/GoogleDrive/My Drive/data/IPEDS"
 	local rawpath "/Volumes/GoogleDrive/My Drive/data/IPEDS"
 }
@@ -67,7 +67,7 @@ if strpos("${panel_data}", "0") {
 }
 else {
 	local startyr = 1990
-	local endyr = 2018
+	local endyr = 2020
 	local savefile = 1
 }
 if missing("`savetemp'") {
@@ -131,7 +131,7 @@ forvalues yr = `startyr'/`endyr' {
 	else if `yr' == 2016 {
 		local fyr = "c`yr'_a_rv"
 	}
-	else if `yr' == 2018 {
+	else if `yr' >= 2018 {
 		local fyr = "c`yr'_a_data_stata"
 	}
 

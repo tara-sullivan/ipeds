@@ -1,5 +1,5 @@
-\begin{tikzpicture}[align=left,
-every node/.style={font=\footnotesize}]
+\begin{tikzpicture}[every node/.style={font=\footnotesize},
+align=left]
 % This file was created with tikzplotlib v0.9.17.
 \definecolor{color0}{rgb}{0.266666666666667,0.466666666666667,0.666666666666667}
 \definecolor{color1}{rgb}{0.933333333333333,0.4,0.466666666666667}
@@ -15,10 +15,15 @@ tick pos=left,
 title={Ratio of women to men},
 width=10.317162499999998cm,
 x grid style={white!69.0196078431373!black},
-xmin=1988.6, xmax=2035,
+xmin=1988.5, xmax=2035,
 xtick style={color=black},
-xtick={1990,2000,2010},
-xticklabels={\(\displaystyle 1990\),\(\displaystyle 2000\),\(\displaystyle 2010\)},
+xtick={1990,2000,2010,2020},
+xticklabels={
+  \(\displaystyle 1990\),
+  \(\displaystyle 2000\),
+  \(\displaystyle 2010\),
+  \(\displaystyle 2020\)
+},
 ymajorgrids,
 ymin=0, ymax=1,
 ytick style={color=black},
@@ -68,6 +73,8 @@ table {%
 2016 0.223389029502869
 2017 0.226261734962463
 2018 0.240228176116943
+2019 0.249625205993652
+2020 0.272048830986023
 };
 \addplot [semithick, color1]
 table {%
@@ -98,6 +105,8 @@ table {%
 2016 0.205791473388672
 2017 0.213488936424255
 2018 0.231927156448364
+2019 0.247621655464172
+2020 0.259202241897583
 };
 \addplot [semithick, color2]
 table {%
@@ -130,6 +139,8 @@ table {%
 2016 0.319848775863647
 2017 0.335242509841919
 2018 0.340254306793213
+2019 0.36008358001709
+2020 0.35241174697876
 };
 \addplot [semithick, color3]
 table {%
@@ -160,6 +171,8 @@ table {%
 2016 0.193636417388916
 2017 0.198331236839294
 2018 0.209817886352539
+2019 0.206441879272461
+2020 0.220119476318359
 };
 \addplot [semithick, color4]
 table {%
@@ -178,6 +191,8 @@ table {%
 2016 0.573572158813477
 2017 0.684032797813416
 2018 0.766576766967773
+2019 0.73820161819458
+2020 0.709370732307434
 };
 \addplot [semithick, color5]
 table {%
@@ -210,6 +225,8 @@ table {%
 2016 0.227431774139404
 2017 0.202842831611633
 2018 0.221844434738159
+2019 0.22710919380188
+2020 0.225972175598145
 };
 \addplot [semithick, white!73.3333333333333!black]
 table {%
@@ -239,38 +256,40 @@ table {%
 2016 0.130511522293091
 2017 0.12526535987854
 2018 0.181153535842896
+2019 0.153496861457825
+2020 0.152400851249695
 };
-\draw (axis cs:2018.5,0.300228192859772) node[
+\draw (axis cs:2020.5,0.332048802647803) node[
   anchor=base west,
   text=color0,
   rotate=0.0
 ]{General};
-\draw (axis cs:2018.5,0.231927175843694) node[
+\draw (axis cs:2020.5,0.259202185409589) node[
   anchor=base west,
   text=color1,
   rotate=0.0
 ]{Computer science};
-\draw (axis cs:2018.5,0.420254305488492) node[
+\draw (axis cs:2020.5,0.432411756433694) node[
   anchor=base west,
   text=color2,
   rotate=0.0
 ]{Information science};
-\draw (axis cs:2018.5,0.109817893903405) node[
+\draw (axis cs:2020.5,0.120119521912351) node[
   anchor=base west,
   text=color3,
   rotate=0.0
 ]{IT};
-\draw (axis cs:2018.5,0.766576819407008) node[
+\draw (axis cs:2020.5,0.709370755998189) node[
   anchor=base west,
   text=color4,
   rotate=0.0
 ]{Media applications};
-\draw (axis cs:2018.5,0.171844453888653) node[
+\draw (axis cs:2020.5,0.175972120322817) node[
   anchor=base west,
   text=color5,
   rotate=0.0
 ]{Other};
-\draw (axis cs:2018.5,0.0411535337124289) node[
+\draw (axis cs:2020.5,0.0124008350730689) node[
   anchor=base west,
   text=white!73.3333333333333!black,
   rotate=0.0

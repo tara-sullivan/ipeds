@@ -7,7 +7,7 @@ local readdata 1
 local cipnames 0
 
 if "`c(os)'" == "MacOSX" {
-	cd "/Users/tarasullivan/Documents/dissertation/ipeds/"
+	cd "/Users/tarasullivan/Documents/dissertation/data/ipeds/"
 	local datapath "/Volumes/GoogleDrive/My Drive/data/IPEDS"
 }
 else {
