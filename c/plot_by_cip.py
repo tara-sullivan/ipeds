@@ -243,7 +243,7 @@ class PlotCIP:
                 label_edit=self.label_edit,
                 xticks=xticks)
 
-    def plot_area(self, ax_w=None, ax_m=None):
+    def plot_area(self, ax_w=None, ax_m=None, ylabel=None):
 
         if ax_w is None and ax_m is None:
             fig, ax = plt.subplots(1, 2, sharey=self.shareyflag)
@@ -267,6 +267,10 @@ class PlotCIP:
             ax_m.set_title('Men')
             ax_w.set_xlabel('')
             ax_m.set_xlabel('')
+
+        if ylabel is not None:
+            ax_w.set_ylabel(ylabel)
+
 
         # Set legends
         ax_w.legend().remove()

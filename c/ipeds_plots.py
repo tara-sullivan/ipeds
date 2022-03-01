@@ -72,14 +72,17 @@ title_str = ('Number of Bachelor\'s Degrees awarded'
              ' in US 4-year colleges')
 save_rateplot('n_degrees', source='Snyder (2013)', plot_title=title_str)
 
+plt.close('all')
+
 # %%
+plt.close('all')
 ##############################################################################
 # 2. Ration men to women in historically male dominated fields
 
 male_dom_cip = ['14', '11', '40', '45', '27', '52', '26', '42']
 
 # Initialize first sub-plot
-plt.close('all')
+
 fig, ax = plt.subplots(1, 2)
 ref_name = 'fig:ipeds'
 subplot_titles = ''
@@ -93,7 +96,14 @@ cip_dict = {
     'All Fields': ['98']
 }
 
-label_edit = {'11': -.07, '14': .02, '40': -.08}
+label_edit = {
+    '11': -.1,  # Computer services
+    '14': .02,  # Engineering
+    '40': -.09,  # Physical sciences
+    '52': .02,  # Business
+    '26': -.03,  # Biological sciences
+    '98': -.05  # All fields
+}
 
 # Create standalone version of graph
 cip_cls = PlotCIP(male_dom_cip, rategraph=True, x_lim=2030,
@@ -101,6 +111,7 @@ cip_cls = PlotCIP(male_dom_cip, rategraph=True, x_lim=2030,
 save_rateplot('male_dom')
 
 # %%
+
 # Create version for sub-plot version
 # edit cip dictionary
 cip_cls.cip_dict['42'] = 'Social \\\\ Sciences'
@@ -118,12 +129,12 @@ cip_cls.cip_dict['40'] = 'Physical \\\\ Sciences'
 #             }
 
 cip_cls.label_edit = {
-    '14': 0, '11': -.22,
-    '40': -.23, '27': 0, '52': -.05,
-    '26': -.2, '42': -.05, '98': -.05}
+    '14': .02, '11': -.25,
+    '40': -.23, '27': 0.08, '52': .08,
+    '26': -.25, '42': -.1, '98': -.1}
 
 # plot sub-pot graph
-cip_cls.plot_rate(ax=ax[ax_loc], xticks=[1990, 1995, 2000, 2005, 2010, 2015])
+cip_cls.plot_rate(ax=ax[ax_loc], xticks=[1990, 1995, 2000, 2005, 2010, 2015, 2020])
 
 # edit variable for save_subplots
 plt_title = ax[ax_loc].get_title()
@@ -178,16 +189,23 @@ cip_cls.plot_rate()
 save_rateplot('social_science_rat')
 
 # %%
-# save version of subplot
-cip_cls.cip_dict['45.10'] = 'Political \\\\ science'
-cip_cls.label_edit = {
-    '45.11': -.1, '45.09': -.1, '45.10': -.15, '45.06': -.2
-}
 
 # plot sub-pot graph
 cip_cls = PlotCIP(cip_list, cip_dict=cip_dict_arg,
-                  cip_inlabel=False, drop_other=False, x_lim=2030)
-cip_cls.plot_rate(ax=ax[ax_loc], xticks=[1990, 1995, 2000, 2005, 2010, 2015])
+                  cip_inlabel=False, drop_other=False, x_lim=2030,)
+cip_cls.label_edit = {
+    '45.11': .1,  # Sociology
+    '45.02': -.15,  # Anthropology
+    '45.09': -.2,  # Int'l relations
+    '45.10': -.3,  # Poli sci
+    '45.06': -.2,
+    '45.99': .1  # Other
+}
+# save version of subplot
+cip_cls.cip_dict['45.10'] = 'Political \\\\ science'
+cip_cls.cip_dict['45.09'] = 'Int\'l \\\\ relations'
+
+cip_cls.plot_rate(ax=ax[ax_loc], xticks=[1990, 1995, 2000, 2005, 2010, 2015, 2020])
 # edit variable for save_subplots
 plt_title = ax[ax_loc].get_title() + ' - Social Sciences'
 # remove y-axis label
@@ -212,6 +230,7 @@ PlotCIP(cip_list, cip_dict=cip_dict_arg, areagraph=True, shareyflag=False)
 save_areaplot('social_science_area', 'Social Science')
 
 # Add plot to subplot
+plt.close('all')
 
 # %%
 ##############################################################################
@@ -364,6 +383,21 @@ save_rateplot('cip11_rat',
                    'align=left'
                }
 )
+cip_dict = {'General': ['11.01'],
+            'Information science': ['11.04'],
+            'Media applications': ['11.08'],
+            'Systems network': ['11.09'],
+            'IT': ['11.10'],
+            'Other': ['11.02', '11.05', '11.99', '11.03', '11.06']}
+
+# Paper version
+cip_cls = PlotCIP(cip_list=cip_list,
+                  cip_dict=cip_dict, label_edit=label_edit,
+                  rategraph=True, areagraph=True,
+                  rate_title=cip2labels['11'],
+                  x_lim=2035, shareyflag=True,
+                  )
+save_comboplot(cip_cls, 'cip11_paper', slide=False)
 
   # %%
 ##############################################################################
@@ -391,6 +425,30 @@ cip_cls = PlotCIP(cip_list=cip_list,
                   )
 
 save_comboplot(cip_cls, 'cip13')
+
+# %%
+##############################################################################
+# Biological sciences
+
+plt.close('all')
+
+cip_list = ['26']
+label_edit = {}
+cip_dict = {'Biology': ['26']}
+# Paper version
+cip_cls = PlotCIP(cip_list=cip_list,
+                  cip_dict=cip_dict, label_edit=label_edit,
+                  rategraph=True, areagraph=False,
+                  rate_title='Biological sciences',
+                  x_lim=2025, shareyflag=False,
+                  )
+save_rateplot('biology_rate_paper',
+              extra_tikzpicture_parameters = {
+                   'every node/.style={font=\\footnotesize}',
+                   'align=left'
+               })
+# save_comboplot(cip_cls, 'biology_paper')
+
 
 # %%
 ##############################################################################
@@ -425,6 +483,7 @@ save_comboplot(cip_cls, 'science_math_paper')
 # %%
 ##############################################################################
 # Physical Sciences and math
+plt.close('all')
 
 cip_list = ['27'] + list(cip4labels_df.loc['40'].index)
 
@@ -447,11 +506,12 @@ cip_cls = PlotCIP(cip_list=cip_list,
                   cip_dict=cip_dict, label_edit=label_edit,
                   rategraph=True, areagraph=True,
                   rate_title='Physical Sciences and Math',
-                  x_lim=2031, shareyflag=False,
+                  x_lim=2031, shareyflag=True,
                   )
-save_comboplot(cip_cls, 'physical_science_math_paper')
+save_comboplot(cip_cls, 'physical_science_math_paper', slide=False)
 
 # subplot_titles += tplf.subplot_title(
+
 #     ax_loc=ax_loc, ref_name=ref_name, col=False,
 #     subtitle_id=subtitle_id, plt_title=plt_title
 # )
@@ -464,5 +524,84 @@ save_comboplot(cip_cls, 'physical_science_math_paper')
 
 
 ##############################################################################
-plt.close('all')
+# plt.close('all')
 print('done: ipeds_plots.py')
+
+# %%
+
+ipeds_df = ReadData()
+df4 = ipeds_df.df4
+df2 = ipeds_df.df2
+
+# %%
+
+# Physics ratios
+
+# Sentences to copy
+cip4 = '40.08'
+startyr = 1990
+endyr = 2019
+
+def print_rat(cip4=None, cip2=None, startyr=1990, endyr=2019, return_df=False):
+    if cip4 is not None:
+        assert cip2 is None, "Only pass cip4 or cip2"
+        ciplabel = cip4labels_df.loc[cip4[:2], cip4]['ciptitle2010']
+        aggdf = (
+            df4.loc[df4['cip4'] == cip4][['ctotalm', 'ctotalw', 'year']]
+                .groupby('year').sum())
+    if cip2 is not None:
+        assert cip4 is None, "Only pass cip4 or cip2"
+        ciplabel = cip2labels['11']
+        aggdf = (
+            df2.loc[df2['cip2'] == cip2][['ctotalm', 'ctotalw', 'year']]
+                .groupby('year').sum()
+        )
+
+    aggdf['rat'] = aggdf['ctotalw'] / aggdf['ctotalm']
+    aggdf.loc[startyr, 'rat']
+
+    print(
+        f"Ratio of women to men completing degrees in {ciplabel} in"
+        f" {startyr} was {aggdf.loc[startyr, 'rat']:.2f}."
+        f"\n"
+        f"Ratio of women to men completing degrees in {ciplabel} in"
+        f" {endyr} was {aggdf.loc[endyr, 'rat']:.2f}"
+    )
+
+    if return_df:
+        return aggdf
+
+print_rat(cip4='40.08')
+
+# %%
+
+aggdf = print_rat(cip2='11', return_df=True)
+min_idx = aggdf[aggdf['rat'] == aggdf['rat'].min()].index[0]
+print(
+    f"The ratio of women to men completing degrees in {cip2labels['11']}"
+    f" reaches its low of {aggdf['rat'].min():.2f} in {min_idx}"
+)
+
+# %%
+
+# Total CS ratio
+cip2 = '11'
+startyr = 1990
+endyr = 2019
+
+cip2label = cip2labels['11']
+aggdf = (
+    df2.loc[df2['cip2'] == cip2][['ctotalm', 'ctotalw', 'year']]
+    .groupby('year').sum()
+)
+
+startyr_rat = aggdf['ctotalw'].loc[startyr] / aggdf['ctotalm'].loc[startyr]
+endyr_rat = aggdf['ctotalw'].loc[endyr] / aggdf['ctotalm'].loc[endyr]
+
+print(
+    f"Ratio of women to men completing degrees in {cip2label} in"
+    f" {startyr} was {startyr_rat:.2f}."
+    f"\n"
+    f"Ratio of women to men completing degrees in {cip4label} in"
+    f" {endyr} was {endyr_rat:.2f}"
+)

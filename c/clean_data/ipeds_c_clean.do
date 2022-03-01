@@ -67,7 +67,7 @@ if strpos("${panel_data}", "0") {
 }
 else {
 	local startyr = 1990
-	local endyr = 2020
+	local endyr = 2019
 	local savefile = 1
 }
 if missing("`savetemp'") {
