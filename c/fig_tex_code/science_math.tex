@@ -1,3 +1,4 @@
+\begin{tikzpicture}[]
 % This file was created with tikzplotlib v0.9.17.
 \begin{tikzpicture}
 
@@ -272,8 +273,11 @@ table {%
 
 \end{tikzpicture}
 
+
+\end{tikzpicture}
+
 \vspace{0.1cm}
-\begin{tikzpicture}
+\begin{tikzpicture}[]
 % This file was created with tikzplotlib v0.9.17.
 \definecolor{color0}{rgb}{0.266666666666667,0.466666666666667,0.666666666666667}
 \definecolor{color1}{rgb}{0.933333333333333,0.4,0.466666666666667}
@@ -282,7 +286,7 @@ table {%
 \definecolor{color4}{rgb}{0.4,0.8,0.933333333333333}
 \definecolor{color5}{rgb}{0.666666666666667,0.2,0.466666666666667}
 
-\begin{groupplot}[group style={group size=2 by 1, horizontal sep=0.8cm, group name=my plots}]
+\begin{groupplot}[group style={group size=2 by 1, group name=my plots, horizontal sep=0.8cm}]
 \nextgroupplot[
 height=90pt, width=160pt,
 legend style={at={(2.02, 0.5)},anchor=west,},
@@ -295,6 +299,7 @@ xmin=1988.55, xmax=2020.45,
 xtick style={color=black},
 xtick={1990,2000,2010},
 xticklabels={\(\displaystyle 1990\),\(\displaystyle 2000\),\(\displaystyle 2010\)},
+ylabel={Num (1000s)},
 ymajorgrids,
 ymin=0, ymax=111.4302,
 ytick style={color=black}

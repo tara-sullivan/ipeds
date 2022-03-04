@@ -1,3 +1,4 @@
+\begin{tikzpicture}[]
 % This file was created with tikzplotlib v0.9.17.
 \begin{tikzpicture}
 
@@ -15,22 +16,21 @@ tick pos=left,
 title={Ratio of women to men},
 width=300pt,
 x grid style={white!69.0196078431373!black},
-xmin=1988.5, xmax=2031,
+xmin=1988.55, xmax=2031,
 xtick style={color=black},
-xtick={1990,1995,2000,2005,2010,2015,2020},
+xtick={1990,1995,2000,2005,2010,2015},
 xticklabels={
   \(\displaystyle 1990\),
   \(\displaystyle 1995\),
   \(\displaystyle 2000\),
   \(\displaystyle 2005\),
   \(\displaystyle 2010\),
-  \(\displaystyle 2015\),
-  \(\displaystyle 2020\)
+  \(\displaystyle 2015\)
 },
 ymajorgrids,
-ymin=0, ymax=3.5,
+ymin=0, ymax=3,
 ytick style={color=black},
-ytick={0,0.5,1,1.5,2,2.5,3,3.5},
+ytick={0,0.5,1,1.5,2,2.5,3},
 yticklabels={
   \(\displaystyle 0\),
   \(\displaystyle 0.5\),
@@ -38,8 +38,7 @@ yticklabels={
   \(\displaystyle 1.5\),
   \(\displaystyle 2\),
   \(\displaystyle 2.5\),
-  \(\displaystyle 3\),
-  \(\displaystyle 3.5\)
+  \(\displaystyle 3\)
 }
 ]
 \addplot [semithick, color0]
@@ -71,7 +70,6 @@ table {%
 2017 0.485498905181885
 2018 0.491626977920532
 2019 0.504492402076721
-2020 0.508323907852173
 };
 \addplot [semithick, color1]
 table {%
@@ -105,7 +103,6 @@ table {%
 2017 0.911926984786987
 2018 0.932909369468689
 2019 0.976131916046143
-2020 1.01406621932983
 };
 \addplot [semithick, color2]
 table {%
@@ -138,7 +135,6 @@ table {%
 2017 2.41193509101868
 2018 2.55055665969849
 2019 2.79358434677124
-2020 2.87886357307434
 };
 \addplot [semithick, color3]
 table {%
@@ -171,7 +167,6 @@ table {%
 2017 1.69435846805573
 2018 1.7236739397049
 2019 1.84039700031281
-2020 1.938805103302
 };
 \addplot [semithick, color4]
 table {%
@@ -205,7 +200,6 @@ table {%
 2017 1.56681549549103
 2018 1.53559231758118
 2019 1.58189427852631
-2020 1.61822664737701
 };
 \addplot [semithick, color5]
 table {%
@@ -239,7 +233,6 @@ table {%
 2017 2.68607902526855
 2018 2.76014471054077
 2019 2.74482178688049
-2020 2.90408086776733
 };
 \addplot [semithick, white!73.3333333333333!black]
 table {%
@@ -273,7 +266,6 @@ table {%
 2017 1.22725999355316
 2018 1.28747606277466
 2019 1.40647172927856
-2020 1.51133787631989
 };
 \addplot [semithick, black]
 table {%
@@ -307,44 +299,43 @@ table {%
 2017 0.63182270526886
 2018 0.628732562065125
 2019 0.643307685852051
-2020 0.655405402183533
 };
-\draw (axis cs:2020.5,0.508323917137476) node[
+\draw (axis cs:2019.5,0.504492413227454) node[
   anchor=base west,
   text=color0,
   rotate=0.0
 ]{Economics};
-\draw (axis cs:2020.5,1.01406619934079) node[
+\draw (axis cs:2019.5,0.97613195954249) node[
   anchor=base west,
   text=color1,
   rotate=0.0
 ]{Political science};
-\draw (axis cs:2020.5,2.87886360647113) node[
+\draw (axis cs:2019.5,2.79358437935844) node[
   anchor=base west,
   text=color2,
   rotate=0.0
 ]{Sociology};
-\draw (axis cs:2020.5,1.93880510440835) node[
+\draw (axis cs:2019.5,1.84039699570815) node[
   anchor=base west,
   text=color3,
   rotate=0.0
 ]{Other};
-\draw (axis cs:2020.5,1.61822660098522) node[
+\draw (axis cs:2019.5,1.58189429618001) node[
   anchor=base west,
   text=color4,
   rotate=0.0
 ]{Int'l relations};
-\draw (axis cs:2020.5,2.90408077408498) node[
+\draw (axis cs:2019.5,2.74482187241094) node[
   anchor=base west,
   text=color5,
   rotate=0.0
 ]{Anthropology};
-\draw (axis cs:2020.5,1.51133786848073) node[
+\draw (axis cs:2019.5,1.40647175702526) node[
   anchor=base west,
   text=white!73.3333333333333!black,
   rotate=0.0
 ]{Criminology};
-\draw (axis cs:2020.5,0.655405405405405) node[
+\draw (axis cs:2019.5,0.643307638402242) node[
   anchor=base west,
   text=black,
   rotate=0.0
@@ -353,8 +344,11 @@ table {%
 
 \end{tikzpicture}
 
+
+\end{tikzpicture}
+
 \vspace{0.1cm}
-\begin{tikzpicture}
+\begin{tikzpicture}[]
 % This file was created with tikzplotlib v0.9.17.
 \definecolor{color0}{rgb}{0.266666666666667,0.466666666666667,0.666666666666667}
 \definecolor{color1}{rgb}{0.933333333333333,0.4,0.466666666666667}
@@ -372,17 +366,13 @@ tick align=outside,
 tick pos=left,
 x grid style={white!69.0196078431373!black},
 xlabel={Women},
-xmin=1988.5, xmax=2021.5,
+xmin=1988.55, xmax=2020.45,
 xtick style={color=black},
-xtick={1990,2000,2010,2020},
-xticklabels={
-  \(\displaystyle 1990\),
-  \(\displaystyle 2000\),
-  \(\displaystyle 2010\),
-  \(\displaystyle 2020\)
-},
+xtick={1990,2000,2010},
+xticklabels={\(\displaystyle 1990\),\(\displaystyle 2000\),\(\displaystyle 2010\)},
+ylabel={Num (1000s)},
 ymajorgrids,
-ymin=-4.1952, ymax=88.0992,
+ymin=-4.1757, ymax=87.6897,
 ytick style={color=black}
 ]
 \path [draw=color0, fill=color0]
@@ -417,9 +407,7 @@ ytick style={color=black}
 --(axis cs:2017,0)
 --(axis cs:2018,0)
 --(axis cs:2019,0)
---(axis cs:2020,0)
---(axis cs:2020,13.496)
---(axis cs:2020,13.496)
+--(axis cs:2019,13.532)
 --(axis cs:2019,13.532)
 --(axis cs:2018,13.299)
 --(axis cs:2017,12.756)
@@ -484,9 +472,7 @@ ytick style={color=black}
 --(axis cs:2017,12.756)
 --(axis cs:2018,13.299)
 --(axis cs:2019,13.532)
---(axis cs:2020,13.496)
---(axis cs:2020,35.34)
---(axis cs:2020,35.34)
+--(axis cs:2019,34.185)
 --(axis cs:2019,34.185)
 --(axis cs:2018,32.516)
 --(axis cs:2017,31.259)
@@ -551,9 +537,7 @@ ytick style={color=black}
 --(axis cs:2017,31.259)
 --(axis cs:2018,32.516)
 --(axis cs:2019,34.185)
---(axis cs:2020,35.34)
---(axis cs:2020,57.228)
---(axis cs:2020,57.228)
+--(axis cs:2019,56.218)
 --(axis cs:2019,56.218)
 --(axis cs:2018,54.512)
 --(axis cs:2017,52.923)
@@ -618,9 +602,7 @@ ytick style={color=black}
 --(axis cs:2017,52.923)
 --(axis cs:2018,54.512)
 --(axis cs:2019,56.218)
---(axis cs:2020,57.228)
---(axis cs:2020,63.913)
---(axis cs:2020,63.913)
+--(axis cs:2019,63.079)
 --(axis cs:2019,63.079)
 --(axis cs:2018,61.174)
 --(axis cs:2017,60.041)
@@ -685,9 +667,7 @@ ytick style={color=black}
 --(axis cs:2017,60.041)
 --(axis cs:2018,61.174)
 --(axis cs:2019,63.079)
---(axis cs:2020,63.913)
---(axis cs:2020,69.826)
---(axis cs:2020,69.826)
+--(axis cs:2019,69.125)
 --(axis cs:2019,69.125)
 --(axis cs:2018,67.02)
 --(axis cs:2017,66.009)
@@ -752,9 +732,7 @@ ytick style={color=black}
 --(axis cs:2017,66.009)
 --(axis cs:2018,67.02)
 --(axis cs:2019,69.125)
---(axis cs:2020,69.826)
---(axis cs:2020,76.729)
---(axis cs:2020,76.729)
+--(axis cs:2019,75.751)
 --(axis cs:2019,75.751)
 --(axis cs:2018,73.89)
 --(axis cs:2017,72.743)
@@ -819,9 +797,7 @@ ytick style={color=black}
 --(axis cs:2017,72.743)
 --(axis cs:2018,73.89)
 --(axis cs:2019,75.751)
---(axis cs:2020,76.729)
---(axis cs:2020,82.061)
---(axis cs:2020,82.061)
+--(axis cs:2019,80.706)
 --(axis cs:2019,80.706)
 --(axis cs:2018,78.588)
 --(axis cs:2017,77.128)
@@ -886,9 +862,7 @@ ytick style={color=black}
 --(axis cs:2017,77.128)
 --(axis cs:2018,78.588)
 --(axis cs:2019,80.706)
---(axis cs:2020,82.061)
---(axis cs:2020,83.904)
---(axis cs:2020,83.904)
+--(axis cs:2019,82.542)
 --(axis cs:2019,82.542)
 --(axis cs:2018,80.483)
 --(axis cs:2017,79.038)
@@ -953,7 +927,6 @@ table {%
 2017 12.7559995651245
 2018 13.298999786377
 2019 13.5319995880127
-2020 13.496000289917
 };
 \addplot [semithick, color1]
 table {%
@@ -987,7 +960,6 @@ table {%
 2017 31.2590007781982
 2018 32.515998840332
 2019 34.185001373291
-2020 35.3400001525879
 };
 \addplot [semithick, color2]
 table {%
@@ -1021,7 +993,6 @@ table {%
 2017 52.9230003356934
 2018 54.5120010375977
 2019 56.2179985046387
-2020 57.2280006408691
 };
 \addplot [semithick, color3]
 table {%
@@ -1055,7 +1026,6 @@ table {%
 2017 60.0410003662109
 2018 61.173999786377
 2019 63.0789985656738
-2020 63.9129981994629
 };
 \addplot [semithick, color4]
 table {%
@@ -1089,7 +1059,6 @@ table {%
 2017 66.0090026855469
 2018 67.0199966430664
 2019 69.125
-2020 69.8259963989258
 };
 \addplot [semithick, color5]
 table {%
@@ -1123,7 +1092,6 @@ table {%
 2017 72.7429962158203
 2018 73.8899993896484
 2019 75.7509994506836
-2020 76.7289962768555
 };
 \addplot [semithick, white!73.3333333333333!black]
 table {%
@@ -1157,7 +1125,6 @@ table {%
 2017 77.1279983520508
 2018 78.5879974365234
 2019 80.7060012817383
-2020 82.0609970092773
 };
 \addplot [semithick, black]
 table {%
@@ -1191,7 +1158,6 @@ table {%
 2017 79.0380020141602
 2018 80.4830017089844
 2019 82.5419998168945
-2020 83.9039993286133
 };
 
 \nextgroupplot[
@@ -1203,17 +1169,12 @@ tick align=outside,
 tick pos=left,
 x grid style={white!69.0196078431373!black},
 xlabel={Men},
-xmin=1988.5, xmax=2021.5,
+xmin=1988.55, xmax=2020.45,
 xtick style={color=black},
-xtick={1990,2000,2010,2020},
-xticklabels={
-  \(\displaystyle 1990\),
-  \(\displaystyle 2000\),
-  \(\displaystyle 2010\),
-  \(\displaystyle 2020\)
-},
+xtick={1990,2000,2010},
+xticklabels={\(\displaystyle 1990\),\(\displaystyle 2000\),\(\displaystyle 2010\)},
 ymajorgrids,
-ymin=-4.1952, ymax=88.0992,
+ymin=-4.1757, ymax=87.6897,
 ytick style={color=black},
 yticklabels={}
 ]
@@ -1249,9 +1210,7 @@ yticklabels={}
 --(axis cs:2017,0)
 --(axis cs:2018,0)
 --(axis cs:2019,0)
---(axis cs:2020,0)
---(axis cs:2020,26.55)
---(axis cs:2020,26.55)
+--(axis cs:2019,26.823)
 --(axis cs:2019,26.823)
 --(axis cs:2018,27.051)
 --(axis cs:2017,26.274)
@@ -1316,9 +1275,7 @@ yticklabels={}
 --(axis cs:2017,26.274)
 --(axis cs:2018,27.051)
 --(axis cs:2019,26.823)
---(axis cs:2020,26.55)
---(axis cs:2020,48.091)
---(axis cs:2020,48.091)
+--(axis cs:2019,47.981)
 --(axis cs:2019,47.981)
 --(axis cs:2018,47.65)
 --(axis cs:2017,46.564)
@@ -1383,9 +1340,7 @@ yticklabels={}
 --(axis cs:2017,46.564)
 --(axis cs:2018,47.65)
 --(axis cs:2019,47.981)
---(axis cs:2020,48.091)
---(axis cs:2020,55.694)
---(axis cs:2020,55.694)
+--(axis cs:2019,55.868)
 --(axis cs:2019,55.868)
 --(axis cs:2018,56.274)
 --(axis cs:2017,55.546)
@@ -1450,9 +1405,7 @@ yticklabels={}
 --(axis cs:2017,55.546)
 --(axis cs:2018,56.274)
 --(axis cs:2019,55.868)
---(axis cs:2020,55.694)
---(axis cs:2020,59.142)
---(axis cs:2020,59.142)
+--(axis cs:2019,59.596)
 --(axis cs:2019,59.596)
 --(axis cs:2018,60.139)
 --(axis cs:2017,59.747)
@@ -1517,9 +1470,7 @@ yticklabels={}
 --(axis cs:2017,59.747)
 --(axis cs:2018,60.139)
 --(axis cs:2019,59.596)
---(axis cs:2020,59.142)
---(axis cs:2020,62.796)
---(axis cs:2020,62.796)
+--(axis cs:2019,63.418)
 --(axis cs:2019,63.418)
 --(axis cs:2018,63.946)
 --(axis cs:2017,63.556)
@@ -1584,9 +1535,7 @@ yticklabels={}
 --(axis cs:2017,63.556)
 --(axis cs:2018,63.946)
 --(axis cs:2019,63.418)
---(axis cs:2020,62.796)
---(axis cs:2020,65.173)
---(axis cs:2020,65.173)
+--(axis cs:2019,65.832)
 --(axis cs:2019,65.832)
 --(axis cs:2018,66.435)
 --(axis cs:2017,66.063)
@@ -1651,9 +1600,7 @@ yticklabels={}
 --(axis cs:2017,66.063)
 --(axis cs:2018,66.435)
 --(axis cs:2019,65.832)
---(axis cs:2020,65.173)
---(axis cs:2020,68.701)
---(axis cs:2020,68.701)
+--(axis cs:2019,69.355)
 --(axis cs:2019,69.355)
 --(axis cs:2018,70.084)
 --(axis cs:2017,69.636)
@@ -1718,9 +1665,7 @@ yticklabels={}
 --(axis cs:2017,69.636)
 --(axis cs:2018,70.084)
 --(axis cs:2019,69.355)
---(axis cs:2020,68.701)
---(axis cs:2020,71.513)
---(axis cs:2020,71.513)
+--(axis cs:2019,72.209)
 --(axis cs:2019,72.209)
 --(axis cs:2018,73.098)
 --(axis cs:2017,72.659)
@@ -1784,7 +1729,6 @@ table {%
 2017 26.2740001678467
 2018 27.0510005950928
 2019 26.8229999542236
-2020 26.5499992370605
 };
 \addplot [semithick, color1]
 table {%
@@ -1818,7 +1762,6 @@ table {%
 2017 46.5639991760254
 2018 47.6500015258789
 2019 47.9809989929199
-2020 48.0909996032715
 };
 \addplot [semithick, color2]
 table {%
@@ -1852,7 +1795,6 @@ table {%
 2017 55.5460014343262
 2018 56.273998260498
 2019 55.8680000305176
-2020 55.6940002441406
 };
 \addplot [semithick, color3]
 table {%
@@ -1885,7 +1827,6 @@ table {%
 2017 59.7470016479492
 2018 60.1389999389648
 2019 59.5960006713867
-2020 59.1419982910156
 };
 \addplot [semithick, color4]
 table {%
@@ -1919,7 +1860,6 @@ table {%
 2017 63.5559997558594
 2018 63.9459991455078
 2019 63.4179992675781
-2020 62.7960014343262
 };
 \addplot [semithick, color5]
 table {%
@@ -1953,7 +1893,6 @@ table {%
 2017 66.0630035400391
 2018 66.4349975585938
 2019 65.8320007324219
-2020 65.1729965209961
 };
 \addplot [semithick, white!73.3333333333333!black]
 table {%
@@ -1987,7 +1926,6 @@ table {%
 2017 69.6360015869141
 2018 70.0839996337891
 2019 69.3550033569336
-2020 68.7009963989258
 };
 \addplot [semithick, black]
 table {%
@@ -2021,7 +1959,6 @@ table {%
 2017 72.6589965820312
 2018 73.0979995727539
 2019 72.2089996337891
-2020 71.5130004882812
 };
 \end{groupplot}
 
