@@ -1,7 +1,6 @@
-\begin{tikzpicture}[]
+\begin{tikzpicture}[every node/.style={font=\footnotesize},
+align=left]
 % This file was created with tikzplotlib v0.9.17.
-\begin{tikzpicture}
-
 \definecolor{color0}{rgb}{0.266666666666667,0.466666666666667,0.666666666666667}
 \definecolor{color1}{rgb}{0.933333333333333,0.4,0.466666666666667}
 \definecolor{color2}{rgb}{0.133333333333333,0.533333333333333,0.2}
@@ -13,7 +12,7 @@
 height=140pt,
 tick align=outside,
 tick pos=left,
-title={Ratio of women to men},
+title={Engineering \\ Ratio of women to men},
 width=300pt,
 x grid style={white!69.0196078431373!black},
 xmin=1988.55, xmax=2031,
@@ -345,13 +344,12 @@ table {%
 ]{Industrial};
 \end{axis}
 
-\end{tikzpicture}
 
 
 \end{tikzpicture}
 
 \vspace{0.1cm}
-\begin{tikzpicture}[]
+\begin{tikzpicture}[ every node/.style={font=\footnotesize}, align=left,]
 % This file was created with tikzplotlib v0.9.17.
 \definecolor{color0}{rgb}{0.266666666666667,0.466666666666667,0.666666666666667}
 \definecolor{color1}{rgb}{0.933333333333333,0.4,0.466666666666667}
@@ -360,7 +358,7 @@ table {%
 \definecolor{color4}{rgb}{0.4,0.8,0.933333333333333}
 \definecolor{color5}{rgb}{0.666666666666667,0.2,0.466666666666667}
 
-\begin{groupplot}[group style={group size=2 by 1, group name=my plots, horizontal sep=0.8cm}]
+\begin{groupplot}[group style={group size=2 by 1, horizontal sep=0.8cm, group name=my plots}]
 \nextgroupplot[
 height=90pt, width=160pt,
 legend style={at={(2.02, 0.5)},anchor=west,},
@@ -1958,4 +1956,4 @@ table {%
 
 
 \end{tikzpicture}
-\caption{Number Bachelor's degrees awarded (thousands). Source: IPEDS.}
+\caption{The top figure contains the ratio of women to men completing bachelor's degree in the specified field. The bottom figures contain the total number of bachelor's degrees awarded in thousands for men and for women. Source: IPEDS.}

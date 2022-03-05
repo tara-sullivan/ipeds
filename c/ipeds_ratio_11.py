@@ -174,9 +174,10 @@ ipeds_to_nces23_dict = {
 }
 
 # %%
-year = 2011
+year1 = 2011
+year2 = 2019
 
-df = df2.loc[df2['year'] == year].copy()
+df = df2.loc[df2['year'].isin([2011, 2019])].copy()
 
 # First map the values to the majors23 values in the NCES data
 df['majors23'] = df['cip2'].map(ipeds_to_nces23_dict)
@@ -190,15 +191,16 @@ df['majors15'] = df['majors15_idx'].map(major_dict)
 # %%
 
 # generate the gender ratio for each of these fields
-agg_df = df.groupby('majors15')[['ctotalm', 'ctotalw']].sum()
+agg_df = df.groupby(['majors15', 'year'])[['ctotalm', 'ctotalw']].sum()
 agg_df['ratio'] = agg_df['ctotalw'] / agg_df['ctotalm']
 #
 agg_df.drop(columns=['ctotalm', 'ctotalw'], inplace=True)
-agg_df.sort_values(ascending=True, by='ratio', inplace=True)
+agg_df = agg_df.unstack()
+agg_df.sort_values(ascending=True, by=('ratio', 2011), inplace=True)
 
 mytab = tabulate(
     agg_df,
-    ['Major', 'Ratio'],
+    ['Major', '2011', '2019'],
     tablefmt='latex',
     floatfmt='.2f'
 )

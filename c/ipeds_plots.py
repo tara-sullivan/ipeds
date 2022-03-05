@@ -280,8 +280,9 @@ label_edit = {'14.07': .05, '14.35': .02,
 cip_cls = PlotCIP(cip_list=cip_list, cip_dict=cip_dict,
                   rategraph=True, areagraph=True,
                   label_edit=label_edit,
+                  rate_title='Engineering',
                   x_lim=2031, shareyflag=False)
-save_comboplot(cip_cls, 'cip14')
+save_comboplot(cip_cls, 'cip14', slide=False)
 
 # %%
 # For paper
@@ -522,6 +523,46 @@ save_comboplot(cip_cls, 'physical_science_math_paper', slide=False)
 #     'align=left'
 # })
 
+# %%
+##############################################################################
+# Physical science
+plt.close('all')
+
+cip_list = list(cip4labels_df.loc['40'].index)
+
+cip_dict = {'Biology': ['26'],
+            'Geosciences': ['40.06'],
+            'Other': ['40.01', '40.02', '40.04', '40.99']}
+
+label_edit = {'40.99': -.1, '27': .05, '40.06': -.03}
+
+# Slide version
+cip_cls = PlotCIP(cip_list=cip_list,
+                  cip_dict=cip_dict, label_edit=label_edit,
+                  rate_title='Physical Sciences',
+                  rategraph=True, areagraph=False,
+                  x_lim=2031, shareyflag=False,
+                  )
+tplf.save_subplots(
+    tex_img_path + '/physical_science_paper.tex',
+    height=size.h(1.25), width=size.w(1.1),
+    extra_tikzpicture_parameters={
+        'every node/.style={font=\\footnotesize}',
+        'align=left'
+    },
+    caption='Source: IPEDS.'
+)
+
+# save_comboplot(cip_cls, 'bio_physical_science')
+
+# Paper version
+cip_cls = PlotCIP(cip_list=cip_list,
+                  cip_dict=cip_dict, label_edit=label_edit,
+                  rategraph=True, areagraph=True,
+                  rate_title='Physical Sciences',
+                  x_lim=2031, shareyflag=True,
+                  )
+save_comboplot(cip_cls, 'bio_physical_science_paper', slide=False)
 
 ##############################################################################
 # plt.close('all')
