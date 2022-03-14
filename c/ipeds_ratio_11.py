@@ -21,6 +21,55 @@ ipeds_dict = MakeDict()
 cip2labels_short = ipeds_dict.cip2labels_short
 cip2labels = cip2labels_short
 
+# # %%
+#
+# # NCES dictionaries
+#
+# major_map = {
+#     0.0: 0.0,    # Undecided or undeclared
+#     1.0: 1.0,    # Computer and information sciences
+#     2.0: 2.0,    # Engineering and engineering technology
+#     3.0: 3.0,    # Biological and physical science, science tech
+#     4.0: 4.0,    # Mathematics
+#     5.0: 5.0,    # Agriculture and natural resources
+#     6.0: 6.0,    # General studies and other
+#     7.0: 7.0,    # Social Sciences
+#     8.0: 8.0,    # Psychology
+#     9.0: 9.0,    # Humanities
+#     10.0: 9.0,   # History > Humanities
+#     11.0: 24.0,  # Personal and consumer services > Other Applied
+#     12.0: 24.0,  # Manufacturing, construction, repair, transportation > Oth.A
+#     13.0: 24.0,  # Military technology and protective services > Other Applied
+#     14.0: 14.0,  # Health care fields
+#     15.0: 15.0,  # Business
+#     16.0: 16.0,  # Education
+#     17.0: 24.0,  # Architecture > Other Applied
+#     18.0: 18.0,  # Communications
+#     19.0: 24.0,  # Public administration and human services > Other Applied
+#     20.0: 24.0,  # Design and applied arts > Other Applied
+#     21.0: 24.0,  # Law and legal studies > Other Applied
+#     22.0: 24.0,  # Library Science > Other Applied
+#     23.0: 24.0   # Theology and religious vocations > Other Applied
+# }
+#
+# major_dict = {
+#     0.0: 'Undecided or undeclared',
+#     1.0: 'Computer and information sciences',
+#     2.0: 'Engineering and engineering technology',
+#     3.0: 'Biological and physical science, science tech',
+#     4.0: 'Mathematics',
+#     5.0: 'Agriculture and natural resources',
+#     6.0: 'General studies and other',
+#     7.0: 'Social Sciences',
+#     8.0: 'Psychology',
+#     9.0: 'Humanities',
+#     14.0: 'Health care fields',
+#     15.0: 'Business',
+#     16.0: 'Education',
+#     18.0: 'Communications',
+#     24.0: 'Other Applied'
+# }
+
 # %%
 
 # NCES dictionaries
@@ -37,18 +86,18 @@ major_map = {
     8.0: 8.0,    # Psychology
     9.0: 9.0,    # Humanities
     10.0: 9.0,   # History > Humanities
-    11.0: 24.0,  # Personal and consumer services > Other Applied
-    12.0: 24.0,  # Manufacturing, construction, repair, transportation > Oth.A
-    13.0: 24.0,  # Military technology and protective services > Other Applied
+    11.0: 24.0,  # Personal and consumer services > Oth. Applied
+    12.0: 12.0,  # Manufacturing, construction, repair, transportation > Oth.A
+    13.0: 13.0,  # Military technology and protective services
     14.0: 14.0,  # Health care fields
     15.0: 15.0,  # Business
     16.0: 16.0,  # Education
-    17.0: 24.0,  # Architecture > Other Applied
+    17.0: 17.0,  # Architecture
     18.0: 18.0,  # Communications
-    19.0: 24.0,  # Public administration and human services > Other Applied
+    19.0: 24.0,  # Public administration and human services > Other App.
     20.0: 24.0,  # Design and applied arts > Other Applied
-    21.0: 24.0,  # Law and legal studies > Other Applied
-    22.0: 24.0,  # Library Science > Other Applied
+    21.0: 21.0,  # Law and legal studies
+    22.0: 6.0,   # Library Science > General studies and other
     23.0: 24.0   # Theology and religious vocations > Other Applied
 }
 
@@ -63,10 +112,14 @@ major_dict = {
     7.0: 'Social Sciences',
     8.0: 'Psychology',
     9.0: 'Humanities',
+    12.0: 'Manufacturing',
+    13.0: 'Military and protective services',
     14.0: 'Health care fields',
     15.0: 'Business',
     16.0: 'Education',
+    17.0: 'Architecture',
     18.0: 'Communications',
+    21.0: 'Law and legal studies',
     24.0: 'Other Applied'
 }
 # %%
@@ -209,3 +262,12 @@ mytab = tabulate(
 with open(tex_img_path + '/rat_11.tex', 'w') as file:
     file.write(mytab)
 
+# %%
+# I also save a version of this table to save onto my USB and make a
+# scatterplot with NCES data.
+if __name__ == '__main__':
+    nces_notes_path = (
+        '/Users/tarasullivan/Documents/dissertation/nces_notes/tables/'
+    )
+    file = nces_notes_path + 'tab_rat_2011'
+    agg_df.droplevel(level=0, axis=1).to_csv(file)
