@@ -269,5 +269,5 @@ if __name__ == '__main__':
     nces_notes_path = (
         '/Users/tarasullivan/Documents/dissertation/nces_notes/tables/'
     )
-    file = nces_notes_path + 'tab_rat_2011'
+    file = nces_notes_path + 'tab_rat_2011.csv'
     agg_df.droplevel(level=0, axis=1).to_csv(file)
