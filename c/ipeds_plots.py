@@ -144,8 +144,8 @@ subplot_titles += tplf.subplot_title(
     ax_loc=ax_loc, ref_name=ref_name, col=False,
     subtitle_id=subtitle_id, plt_title=plt_title
 )
-group_caption += 'Ratio of women to men completing Bachelor\'s degrees' \
-    + ' in U.S. 4-year colleges. Source: IPEDS.'
+group_caption += 'Ratio of women to men completing bachelor\'s degrees' \
+    + ' in U.S. 4-year colleges from 1990 - 2019. Source: IPEDS.'
 
 # %%
 ##############################################################################
@@ -192,7 +192,7 @@ save_rateplot('social_science_rat')
 
 # plot sub-pot graph
 cip_cls = PlotCIP(cip_list, cip_dict=cip_dict_arg,
-                  cip_inlabel=False, drop_other=False, x_lim=2030,)
+                  cip_inlabel=False, drop_other=False, x_lim=2032,)
 cip_cls.label_edit = {
     '45.11': .1,  # Sociology
     '45.02': -.15,  # Anthropology
@@ -205,7 +205,8 @@ cip_cls.label_edit = {
 cip_cls.cip_dict['45.10'] = 'Political \\\\ science'
 cip_cls.cip_dict['45.09'] = 'Int\'l \\\\ relations'
 
-cip_cls.plot_rate(ax=ax[ax_loc], xticks=[1990, 1995, 2000, 2005, 2010, 2015, 2020])
+cip_cls.plot_rate(ax=ax[ax_loc],
+                  xticks=[1990, 1995, 2000, 2005, 2010, 2015, 2020])
 # edit variable for save_subplots
 plt_title = ax[ax_loc].get_title() + ' - Social Sciences'
 # remove y-axis label
